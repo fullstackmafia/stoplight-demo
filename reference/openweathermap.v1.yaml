@@ -334,7 +334,7 @@ paths:
               - metric
               - imperial
           in: query
-          name: unit
+          name: units
           description: '**Units**. *Example: imperial*. Possible values: `standard`, `metric`, and `imperial`. When you do not use the `units` parameter, the format is `standard` by default.'
         - schema:
             type: string
