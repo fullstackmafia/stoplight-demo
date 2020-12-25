@@ -234,7 +234,111 @@ paths:
     get:
       summary: Your GET endpoint
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cod:
+                    type: string
+                  message:
+                    type: number
+                  cnt:
+                    type: number
+                  list:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        dt:
+                          type: number
+                        main:
+                          type: object
+                          properties:
+                            temp:
+                              type: number
+                            feels_like:
+                              type: number
+                            temp_min:
+                              type: number
+                            temp_max:
+                              type: number
+                            pressure:
+                              type: number
+                            sea_level:
+                              type: number
+                            grnd_level:
+                              type: number
+                            humidity:
+                              type: number
+                            temp_kf:
+                              type: number
+                            '':
+                              type: string
+                        weather:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              main:
+                                type: string
+                              description:
+                                type: string
+                              icon:
+                                type: string
+                        clouds:
+                          type: object
+                          properties:
+                            all:
+                              type: number
+                        wind:
+                          type: object
+                          properties:
+                            speed:
+                              type: number
+                            deg:
+                              type: number
+                        visibility:
+                          type: number
+                        pop:
+                          type: number
+                        sys:
+                          type: object
+                          properties:
+                            pod:
+                              type: string
+                        dt_txt:
+                          type: string
+                  city:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      coord:
+                        type: object
+                        properties:
+                          lat:
+                            type: number
+                          lon:
+                            type: number
+                      country:
+                        type: string
+                      timezone:
+                        type: number
+                      sunrise:
+                        type: number
+                      sunset:
+                        type: number
+              examples:
+                example:
+                  value: {}
       operationId: get-forecast-hourly
       description: 'With this endpoint, you can access the hourly forecast of a city for up to 4 days with data every hour. All data can be stored in JSON and XML formats.'
       requestBody:
@@ -242,7 +346,9 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {}
+              properties:
+                me:
+                  type: string
             examples:
               example:
                 value: {}
